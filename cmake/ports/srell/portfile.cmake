@@ -1,17 +1,9 @@
-string(REPLACE "." "_" VERSION ${VERSION})
-
-vcpkg_download_distfile(
-    ARCHIVE
-    URLS "https://akenotsuki.pages.dev/misc/srell/releases/srell${VERSION}.zip"
-         "https://www.akenotsuki.com/misc/srell/releases/srell${VERSION}.zip"
-    FILENAME "srell${VERSION}.zip"
-    SHA512 056adc3a22bd44ba559dc5ab5c956d2e24a5e490d7c35324f2d566604dd32e9ebc9954eb879726bbb8bf333a28b27db4ebc124dbe4093914307dd9128c784164
-)
-
-vcpkg_extract_source_archive(
-    SOURCE_PATH
-    ARCHIVE "${ARCHIVE}"
-    NO_REMOVE_ONE_LEVEL
+vcpkg_from_github(
+    OUT_SOURCE_PATH SOURCE_PATH
+    REPO data-man/SRELL
+    REF 21abff2412c52c2ea6402e3e8798f4607d445728
+    SHA512 7040145ccc383d6058799ea464a2c8f3067e817ad5c8ea6a6bf44c3b122fdcbbbb465a7f38c6b7fa2cb1596e4e2a83f8c80af4001075b19937c415629cee6ad8
+    HEAD_REF trunk
 )
 
 file(INSTALL

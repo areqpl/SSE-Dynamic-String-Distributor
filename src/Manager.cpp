@@ -59,23 +59,20 @@ std::vector<std::string> Manager::processFolders()
 
 			folders.emplace_back(folderName);
 		}
+
+		std::ranges::sort(folders.begin(), folders.end(), [&](const std::string& a, const std::string& b)
+			{
+				const auto itA = m_loadOrder.find(a);
+				const auto itB = m_loadOrder.find(b);
+
+				// reverse order smallest index at the end
+				return itA->second.second > itB->second.second;
+			});
 	}
 	catch (const std::exception& e)
 	{
 		SKSE::log::error("Exception in processFolders: {}", e.what());
 	}
-
-	return folders;
-}
-
-	std::ranges::sort(folders.begin(), folders.end(), [&](const std::string& a, const std::string& b)
-		{
-			const auto itA = m_loadOrder.find(a);
-			const auto itB = m_loadOrder.find(b);
-
-			// reverse order smallest index at the end
-			return itA->second.second > itB->second.second;
-		});
 
 	return folders;
 }

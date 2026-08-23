@@ -21,6 +21,11 @@ Dynamic String Distributor (DSD) is an SKSE plugin for dynamically replacing and
 
 ## Changelog
 
+### v1.5.1
+- **Cross-Platform Toolchain & Portfile Improvements:** Enhanced CMake configuration with `/FIPCH.h` forced header inclusion, reordered dependency discovery, and added robust overlay ports (`clib-util`, `srell`, `directxtk`).
+- **Filesystem Parsing Fix:** Corrected scoping in `Manager::processFolders()` directory sorting.
+- **Robust Exception Handling:** Wrapped hook thunks, lifecycle hooks, and filesystem operations with defensive try-catch handlers.
+
 ### v1.5.0
 - **Skyrim 1.7.99.0 & SKSE 2.3.0 Support:** Full validation against official `offsets-1-7-99-0.txt` database (12/12 Address Library relocation IDs verified).
 - **Runtime Safety Guards:** Added `REL::Module::IsSE()` checks to `DataHandlerInitAllForms` and `NPCFullNameCopyComponent` to prevent null/zero address trampoline crashes on AE / 1.7.99.0.
