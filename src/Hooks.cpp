@@ -163,13 +163,16 @@ namespace Hook
 
 		static void Install()
 		{
-			// datahandler compile files
-			REL::Relocation<std::uintptr_t> target1{ RELOCATION_ID(13645, 0), REL::Relocate(0x341, 0x0) };
-			stl::write_thunk_call<DataHandlerInitAllForms>(target1.address());
+			if (REL::Module::IsSE())
+			{
+				// datahandler compile files
+				REL::Relocation<std::uintptr_t> target1{ RELOCATION_ID(13645, 0), REL::Relocate(0x341, 0x0) };
+				stl::write_thunk_call<DataHandlerInitAllForms>(target1.address());
 
-			// plugin hot reload
-			REL::Relocation<std::uintptr_t> target2{ RELOCATION_ID(13672, 0), REL::Relocate(0xB05, 0x0) };
-			stl::write_thunk_call<DataHandlerInitAllForms>(target2.address());
+				// plugin hot reload
+				REL::Relocation<std::uintptr_t> target2{ RELOCATION_ID(13672, 0), REL::Relocate(0xB05, 0x0) };
+				stl::write_thunk_call<DataHandlerInitAllForms>(target2.address());
+			}
 		}
 	};
 
@@ -198,11 +201,14 @@ namespace Hook
 
 		static void Install()
 		{
-			REL::Relocation<std::uintptr_t> target1{ RELOCATION_ID(24216, 0), REL::Relocate(0x15C, 0x0) };
-			stl::write_thunk_call<NPCFullNameCopyComponent>(target1.address());
+			if (REL::Module::IsSE())
+			{
+				REL::Relocation<std::uintptr_t> target1{ RELOCATION_ID(24216, 0), REL::Relocate(0x15C, 0x0) };
+				stl::write_thunk_call<NPCFullNameCopyComponent>(target1.address());
 
-			REL::Relocation<std::uintptr_t> target2{ RELOCATION_ID(24160, 0), REL::Relocate(0xA0, 0x0) };
-			stl::write_thunk_call<NPCFullNameCopyComponent>(target2.address());
+				REL::Relocation<std::uintptr_t> target2{ RELOCATION_ID(24160, 0), REL::Relocate(0xA0, 0x0) };
+				stl::write_thunk_call<NPCFullNameCopyComponent>(target2.address());
+			}
 		}
 	};
 

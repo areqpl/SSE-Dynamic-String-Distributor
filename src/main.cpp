@@ -1,10 +1,10 @@
-﻿#include "Manager.h"
+#include "Manager.h"
 #include "Hooks.h"
 
 bool CompileFiles(RE::TESDataHandler* a_data, bool downloadedContent)
 {
 	using func_t = decltype(&CompileFiles);
-	static REL::Relocation<func_t> func{ RELOCATION_ID(13645, 0) };
+	static REL::Relocation<func_t> func{ RELOCATION_ID(13645, 13745) };
 	return func(a_data, downloadedContent);
 }
 
