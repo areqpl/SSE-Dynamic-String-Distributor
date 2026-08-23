@@ -21,6 +21,10 @@ Dynamic String Distributor (DSD) is an SKSE plugin for dynamically replacing and
 
 ## Changelog
 
+### v1.5.2
+- **Documentation & Manifest Link Repairs:** Repaired dead documentation link for JSON string escaping (`jsonformatter.org`) and updated `commonlibsse-ng` `$schema` and `homepage` manifest endpoints.
+- **Portfile Hardening:** Ensured all 27 dependencies and vcpkg manifests use active, validated URLs and cryptographic hashes.
+
 ### v1.5.1
 - **Cross-Platform Toolchain & Portfile Improvements:** Enhanced CMake configuration with `/FIPCH.h` forced header inclusion, reordered dependency discovery, and added robust overlay ports (`clib-util`, `srell`, `directxtk`).
 - **Filesystem Parsing Fix:** Corrected scoping in `Manager::processFolders()` directory sorting.
