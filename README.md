@@ -21,6 +21,9 @@ Dynamic String Distributor (DSD) is an SKSE plugin for dynamically replacing and
 
 ## Changelog
 
+### v1.5.3
+- **CI/CD Workflow Permissions:** Added explicit `permissions: contents: write` and injected `GITHUB_TOKEN` to `action-gh-release` to resolve HTTP 403 release publishing error.
+
 ### v1.5.2
 - **Documentation & Manifest Link Repairs:** Repaired dead documentation link for JSON string escaping (`jsonformatter.org`) and updated `commonlibsse-ng` `$schema` and `homepage` manifest endpoints.
 - **Portfile Hardening:** Ensured all 27 dependencies and vcpkg manifests use active, validated URLs and cryptographic hashes.
